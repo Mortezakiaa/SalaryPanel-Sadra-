@@ -10,6 +10,11 @@
   },
   "author": "morteza kia (member of amisa.me team)",
   "dependencies": {
+    "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/material-nextjs": "^5.15.11",
     "@mui/material": "^5.15.17",
     "axios": "^1.6.8",
     "next": "14.2.3",

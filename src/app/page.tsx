@@ -1,3 +1,9 @@
+import Salary from "@/form/Salary";
+
 export default function Home() {
-  return <div></div>;
+  return (
+    <>
+      <Salary />
+    </>
+  );
 }
