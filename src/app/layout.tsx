@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
+import StateProvider from "@/provider/StateProvider";
 
 export const metadata: Metadata = {
   title: "پنل حقوق و دستمزد صدرا",
@@ -13,8 +13,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html dir="rtl" lang="en">
-      <body>{children}</body>
+    <html dir="rtl" lang="fa">
+      <body>
+        <StateProvider>{children}</StateProvider>
+      </body>
     </html>
   );
 }
