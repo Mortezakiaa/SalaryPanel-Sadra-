@@ -2,9 +2,17 @@
 import RTLTextField from "@/components/RTLTextField";
 import { Button, Grid, Stack, Typography } from "@mui/material";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function Salary() {
   const [data, setData] = useState();
+
+  const getList = async ()=>{
+    if(!data){
+      toast.error('')
+    }
+  }
+
   return (
     <Stack
       sx={{
@@ -35,7 +43,7 @@ export default function Salary() {
           <RTLTextField fullWidth label="سال" />
         </Grid>
         <Grid item xs={12} sx={{ display: "flex", justifyContent: "center"}}>
-          <Button fullWidth variant="outlined">نمایش</Button>
+          <Button onClick={getList} fullWidth variant="outlined">نمایش</Button>
         </Grid>
       </Grid>
     </Stack>
