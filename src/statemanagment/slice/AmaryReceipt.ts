@@ -5,6 +5,8 @@ import { TAmaryReceipt } from "@/Types/Types";
 const initialState: TAmaryReceipt = {
   Code: "",
   DateAsarStr: "",
+  HogugRuzaneFish: 0,
+  HogugSaatiFish: 0,
   DaramadMashmolBimeFish: 0,
   DaramadMashmolGheireMashmolBimeFish: 0,
   BimeSahmeKarfarma: 0,

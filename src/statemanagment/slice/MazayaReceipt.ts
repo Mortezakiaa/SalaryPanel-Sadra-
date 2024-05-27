@@ -14,7 +14,7 @@ const initialState: TMazayaReceipt = {
   MablagHokmHogugRadif7: 0,
   MablagHokmHogugRadif8: 0,
   MablagHokmHogugRadif9: 0,
-  MablagHokmHogugRadif1number: 0,
+  MablagHokmHogugRadif10: 0,
   MablagHokmHogugRadif11: 0,
   MablagHokmHogugRadif12: 0,
   MablagHokmHogugRadif13: 0,

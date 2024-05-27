@@ -71,7 +71,7 @@ export interface TMazayaReceipt {
   MablagHokmHogugRadif7: number;
   MablagHokmHogugRadif8: number;
   MablagHokmHogugRadif9: number;
-  MablagHokmHogugRadif1number: number;
+  MablagHokmHogugRadif10: number;
   MablagHokmHogugRadif11: number;
   MablagHokmHogugRadif12: number;
   MablagHokmHogugRadif13: number;
@@ -130,6 +130,7 @@ export interface TKosoratReceipt {
   DateAsarStr: string;
   MablagKosorMahaneHogugRadif1: number;
   MablagKosorMahaneHogugRadif2: number;
+  MablagKosorMahaneHogugRadif3: number;
   MablagKosorMahaneHogugRadif4: number;
   MablagKosorMahaneHogugRadif5: number;
   MablagKosorMahaneHogugRadif6: number;
@@ -139,6 +140,7 @@ export interface TKosoratReceipt {
   MablagKosorMahaneHogugRadif10: number;
   MablagKosorMahaneHogugRadif11: number;
   MablagKosorMahaneHogugRadif12: number;
+  MablagKosorMahaneHogugRadif13: number;
   MablagKosorMahaneHogugRadif14: number;
   MablagKosorMahaneHogugRadif15: number;
   MablagKosorMahaneHogugRadif16: number;
@@ -177,6 +179,8 @@ export interface TKosoratReceipt {
 
 export interface TAmaryReceipt {
   Code: string;
+  HogugSaatiFish: number;
+  HogugRuzaneFish: number;
   DateAsarStr: string;
   DaramadMashmolBimeFish: number;
   DaramadMashmolGheireMashmolBimeFish: number;
