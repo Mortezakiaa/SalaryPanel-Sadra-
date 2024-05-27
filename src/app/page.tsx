@@ -1,10 +1,10 @@
 import ToastContainer from "@/components/ToastContainer";
-import Salary from "@/form/Salary";
+import PersonInfo from "@/form/PersonInfo";
 
 export default function Home() {
   return (
     <>
-      <Salary />
+      <PersonInfo />
       <ToastContainer/>
     </>
   );

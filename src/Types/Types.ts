@@ -54,6 +54,9 @@ export interface TKarkardReceipt {
   ParametrRuzane5: number;
   MorkhasiMandehInMahRuzane: number;
   MorkhasiMandehInMahSaati: number;
+  NobatKariRuzane1: number;
+  NobatKariRuzane2: number;
+  NobatKariRuzane3: number;
 }
 
 export interface TMazayaReceipt {

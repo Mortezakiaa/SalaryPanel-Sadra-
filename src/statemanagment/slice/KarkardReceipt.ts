@@ -41,6 +41,9 @@ const initialState: TKarkardReceipt = {
   ParametrRuzane5: 0,
   MorkhasiMandehInMahRuzane: 0,
   MorkhasiMandehInMahSaati: 0,
+  NobatKariRuzane1: 0,
+  NobatKariRuzane2: 0,
+  NobatKariRuzane3: 0,
 };
 
 const KarkardSlice = createSlice({

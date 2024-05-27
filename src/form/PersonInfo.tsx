@@ -15,7 +15,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 
-export default function Salary() {
+export default function PersonInfo() {
   const dispatch = useDispatch();
   const currentMonth = p2e(
     new Intl.DateTimeFormat("fa", { month: "2-digit" }).format(Date.now())
