@@ -1,12 +1,12 @@
 "use client";
-import { PersonInfo } from "@/Types/Types";
+import { TPersonInfo } from "@/Types/Types";
 import RTLTextField from "@/components/RTLTextField";
 import { Button, Grid, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
 export default function Salary() {
-  const [personInfo, setPersonInfo] = useState<PersonInfo>({
+  const [personInfo, setPersonInfo] = useState<TPersonInfo>({
     code: "",
     codeMeli: "",
     date: "",
