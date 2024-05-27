@@ -205,4 +205,5 @@ export interface TSalarySlice {
   kosorat: TKosoratReceipt[];
   amary: TAmaryReceipt[];
   footer: TFooterReceipt[];
+  isSuccess: boolean;
 }

@@ -1,11 +1,26 @@
 "use client";
-import { TPersonInfo } from "@/Types/Types";
+import { TPersonInfo, TSalarySlice } from "@/Types/Types";
 import RTLTextField from "@/components/RTLTextField";
+import { setAmary } from "@/statemanagment/slice/AmaryReceipt";
+import { setFooter } from "@/statemanagment/slice/FooterReceipt";
+import { setHead } from "@/statemanagment/slice/HeadReceipt";
+import { setKarkard } from "@/statemanagment/slice/KarkardReceipt";
+import { setKosorat } from "@/statemanagment/slice/KosoratReceipt";
+import { setMazaya } from "@/statemanagment/slice/MazayaReceipt";
+import { setReceiptModal } from "@/statemanagment/slice/ReceiptModal";
+import ApiService from "@/utils/axios";
+import { p2e } from "@/utils/replaceNumber";
 import { Button, Grid, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
 
 export default function Salary() {
+  const dispatch = useDispatch();
+  const currentMonth = p2e(
+    new Intl.DateTimeFormat("fa", { month: "2-digit" }).format(Date.now())
+  );
+
   const [personInfo, setPersonInfo] = useState<TPersonInfo>({
     code: "",
     codeMeli: "",
@@ -13,8 +28,8 @@ export default function Salary() {
   });
 
   const [date, setDate] = useState({
-    month: "",
-    year: "",
+    month: currentMonth.toString(),
+    year: "1403",
   });
 
   const getList = async () => {
@@ -30,11 +45,38 @@ export default function Salary() {
       toast.error("ماه مورد نظر را وارد کنید");
       return;
     }
-    if (!date.year) {
+    if (!date.year || date.year.length < 4) {
       toast.error("سال مورد نظر را وارد کنید");
       return;
     }
+    if (date.month == 0) {
+      toast.error("ماه مورد نظر را درست وارد کنید");
+      return;
+    }
     setPersonInfo({ ...personInfo, date: `${date.year}/${date.month}` });
+    const data: TSalarySlice = await ApiService.post("/Pay/Search", personInfo);
+    if (data.isSuccess) {
+      dispatch(setHead(data.head));
+      dispatch(setKarkard(data.karkard));
+      dispatch(setAmary(data.amary));
+      dispatch(setKosorat(data.kosorat));
+      dispatch(setMazaya(data.mazaya));
+      dispatch(setFooter(data.footer));
+      dispatch(setReceiptModal(true));
+    }
+  };
+
+  const monthCheck = (e: any) => {
+    const val = e.target.value;
+    if (val.length > 2) return;
+    if (+val > 12) return;
+    setDate({ ...date, month: val.toString() });
+  };
+
+  const yearCheck = (e: any) => {
+    const val = e.target.value;
+    if (val.length > 4) return;
+    setDate({ ...date, year: val.toString() });
   };
 
   return (
@@ -83,9 +125,7 @@ export default function Salary() {
           <RTLTextField
             type="number"
             value={date.month}
-            onChange={(e) => {
-              setDate({ ...date, month: e.target.value.toString() });
-            }}
+            onChange={monthCheck}
             fullWidth
             label="ماه"
           />
@@ -94,9 +134,7 @@ export default function Salary() {
           <RTLTextField
             type="number"
             value={date.year}
-            onChange={(e) => {
-              setDate({ ...date, year: e.target.value.toString() });
-            }}
+            onChange={yearCheck}
             fullWidth
             label="سال"
           />

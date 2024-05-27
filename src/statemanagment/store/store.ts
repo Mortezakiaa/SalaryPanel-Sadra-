@@ -5,6 +5,7 @@ import MazayaReducer from "../slice/MazayaReceipt";
 import KosoratReducer from "../slice/KosoratReceipt";
 import AmaryReducer from "../slice/AmaryReceipt";
 import FooterReducer from "../slice/FooterReceipt";
+import ReceiptModalReducer from "../slice/ReceiptModal";
 
 const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ const store = configureStore({
     KosoratReducer,
     AmaryReducer,
     FooterReducer,
+    ReceiptModalReducer,
   },
 });
 
