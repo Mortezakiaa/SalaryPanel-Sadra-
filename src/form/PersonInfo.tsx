@@ -1,6 +1,7 @@
 "use client";
 import { TPersonInfo, TSalarySlice } from "@/Types/Types";
 import RTLTextField from "@/components/RTLTextField";
+import Spinner from "@/components/Spinner";
 import { setAmary } from "@/statemanagment/slice/AmaryReceipt";
 import { setFooter } from "@/statemanagment/slice/FooterReceipt";
 import { setHead } from "@/statemanagment/slice/HeadReceipt";
@@ -21,7 +22,7 @@ export default function PersonInfo() {
   const currentMonth = p2e(
     new Intl.DateTimeFormat("fa", { month: "2-digit" }).format(Date.now())
   );
-
+  const [loading, setLoading] = useState(false);
   const [date, setDate] = useState({
     month: currentMonth.toString(),
     year: "1403",
@@ -54,8 +55,8 @@ export default function PersonInfo() {
       toast.error("ماه مورد نظر را درست وارد کنید");
       return;
     }
+    setLoading(true);
     const data: TSalarySlice = await ApiService.post("/Pay/Search", personInfo);
-
     if (data.isSuccess) {
       dispatch(setHead(data.head[0]));
       dispatch(setKarkard(data.karkard[0]));
@@ -63,6 +64,7 @@ export default function PersonInfo() {
       dispatch(setKosorat(data.kosorat[0]));
       dispatch(setMazaya(data.mazaya[0]));
       dispatch(setFooter(data.footer[0]));
+      setLoading(false);
       router.push("/receipt");
     }
   };
@@ -145,9 +147,13 @@ export default function PersonInfo() {
           />
         </Grid>
         <Grid item xs={12} sx={{ display: "flex", justifyContent: "center" }}>
-          <Button onClick={getList} fullWidth variant="outlined">
-            نمایش
-          </Button>
+          {loading ? (
+            <Spinner />
+          ) : (
+            <Button onClick={getList} fullWidth variant="outlined">
+              نمایش
+            </Button>
+          )}
         </Grid>
       </Grid>
     </Stack>
