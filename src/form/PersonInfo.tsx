@@ -133,6 +133,11 @@ export default function PersonInfo() {
             type="number"
             value={date.month}
             onChange={monthCheck}
+            onBlur={() => {
+              if (date.month.length == 1) {
+                setDate({ ...date, month: "0" + date.month });
+              }
+            }}
             fullWidth
             label="ماه"
           />
