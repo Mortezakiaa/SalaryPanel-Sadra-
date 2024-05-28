@@ -10,25 +10,27 @@ import { setMazaya } from "@/statemanagment/slice/MazayaReceipt";
 import ApiService from "@/utils/axios";
 import { p2e } from "@/utils/replaceNumber";
 import { Button, Grid, Stack, Typography } from "@mui/material";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 
 export default function PersonInfo() {
+  const router = useRouter();
   const dispatch = useDispatch();
   const currentMonth = p2e(
     new Intl.DateTimeFormat("fa", { month: "2-digit" }).format(Date.now())
   );
 
+  const [date, setDate] = useState({
+    month: currentMonth.toString(),
+    year: "1403",
+  });
+
   const [personInfo, setPersonInfo] = useState<TPersonInfo>({
     code: "",
     codeMeli: "",
     date: "",
-  });
-
-  const [date, setDate] = useState({
-    month: currentMonth.toString(),
-    year: "1403",
   });
 
   const getList = async () => {
@@ -52,7 +54,6 @@ export default function PersonInfo() {
       toast.error("ماه مورد نظر را درست وارد کنید");
       return;
     }
-    setPersonInfo({ ...personInfo, date: `${date.year}/${date.month}` });
     const data: TSalarySlice = await ApiService.post("/Pay/Search", personInfo);
 
     if (data.isSuccess) {
@@ -62,6 +63,7 @@ export default function PersonInfo() {
       dispatch(setKosorat(data.kosorat[0]));
       dispatch(setMazaya(data.mazaya[0]));
       dispatch(setFooter(data.footer[0]));
+      router.push("/receipt");
     }
   };
 
@@ -77,6 +79,10 @@ export default function PersonInfo() {
     if (val.length > 4) return;
     setDate({ ...date, year: val.toString() });
   };
+
+  useEffect(() => {
+    setPersonInfo({ ...personInfo, date: `${date.year}/${date.month}` });
+  }, [date]);
 
   return (
     <Stack

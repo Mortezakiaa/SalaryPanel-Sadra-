@@ -15,29 +15,31 @@ export default function ReceiptHead() {
     ShomareBime,
     ShomareHesab1,
     ShomareShenasname,
-  } = data.data
+  } = data.data;
 
   return (
-    <Grid container>
-      <Grid
-        item
-        xs={4}
-        style={{ display: "flex", flexDirection: "column", gap: 2 }}
-      >
-        <Typography variant="h6">کد پرسنلی : {Code}</Typography>
-        <Typography variant="h6">نام: {NamePersonel}</Typography>
-        <Typography variant="h6">نام خانوادگی: {FamilyPersonel}</Typography>
+    <Grid container style={{ borderBottom: "1px solid", padding: "5px" }}>
+      <Grid item xs={12} textAlign={"center"} marginBottom={2}>
+        <Typography variant="subtitle1">فیش حقوق صدرا نگین پاسارگاد</Typography>
+        <Typography variant="subtitle1">فیش حقوق</Typography>
       </Grid>
-      <Grid item xs={4}>
-        <Typography variant="h6">کد ملی : {CodeMeli}</Typography>
-        <Typography variant="h6">
+      <Grid item xs={4} paddingRight={5}>
+        <Typography variant="subtitle1">کد پرسنلی : {Code}</Typography>
+        <Typography variant="subtitle1">نام: {NamePersonel}</Typography>
+        <Typography variant="subtitle1">
+          نام خانوادگی: {FamilyPersonel}
+        </Typography>
+      </Grid>
+      <Grid item xs={4} paddingRight={5}>
+        <Typography variant="subtitle1">کد ملی : {CodeMeli}</Typography>
+        <Typography variant="subtitle1">
           شماره شناسنامه: {ShomareShenasname}
         </Typography>
-        <Typography variant="h6">شماره حساب: {ShomareHesab1}</Typography>
+        <Typography variant="subtitle1">شماره حساب: {ShomareHesab1}</Typography>
       </Grid>
-      <Grid item xs={4}>
-        <Typography variant="h6">کد بیمه : {ShomareBime}</Typography>
-        <Typography variant="h6">سمت: {Semat}</Typography>
+      <Grid item xs={4} paddingRight={5}>
+        <Typography variant="subtitle1">کد بیمه : {ShomareBime}</Typography>
+        <Typography variant="subtitle1">سمت: {Semat}</Typography>
       </Grid>
     </Grid>
   );

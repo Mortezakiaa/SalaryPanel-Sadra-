@@ -1,6 +1,7 @@
 "use client";
 
 import { MazayaSelector } from "@/statemanagment/slice/MazayaReceipt";
+import { sp } from "@/utils/replaceNumber";
 import { Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 
@@ -72,69 +73,72 @@ export default function ReceiptMazaya() {
   } = data.data
 
   return (
-    <Grid container>
+    <Grid container style={{textAlign:'center'}}>
       <Grid item xs={12}>
-        {MablagHokmHogugRadif1 != 0 && <Typography variant="h6">حقوق پایه : {MablagHokmHogugRadif1}</Typography>}
-        {MablagHokmHogugRadif2 != 0 && <Typography variant="h6">فوق العاده شغل: {MablagHokmHogugRadif2}</Typography>}
-        {MablagHokmHogugRadif3 != 0 && <Typography variant="h6">بن: {MablagHokmHogugRadif3}</Typography>}
-        {MablagHokmHogugRadif4 != 0 && <Typography variant="h6">خوارو بار و مسکن: {MablagHokmHogugRadif4}</Typography>}
-        {MablagHokmHogugRadif5 != 0 && <Typography variant="h6">حکم ردیف 5: {MablagHokmHogugRadif5}</Typography>}
-        {MablagHokmHogugRadif6 != 0 && <Typography variant="h6">حق اولاد: {MablagHokmHogugRadif6}</Typography>}
-        {MablagHokmHogugRadif7 != 0 && <Typography variant="h6">بازخرید مرخصی: {MablagHokmHogugRadif7}</Typography>}
-        {MablagHokmHogugRadif8 != 0 && <Typography variant="h6">حق تاهل: {MablagHokmHogugRadif8}</Typography>}
-        {MablagHokmHogugRadif9 != 0 && <Typography variant="h6">پایه سنوات: {MablagHokmHogugRadif9}</Typography>}
-        {MablagHokmHogugRadif10 != 0 && <Typography variant="h6">حکم ردیف 10: {MablagHokmHogugRadif10}</Typography>}
-        {MablagHokmHogugRadif11 != 0 && <Typography variant="h6">حکم ردیف 11: {MablagHokmHogugRadif11}</Typography>}
-        {MablagHokmHogugRadif12 != 0 && <Typography variant="h6">حکم ردیف 12: {MablagHokmHogugRadif12}</Typography>}
-        {MablagHokmHogugRadif13 != 0 && <Typography variant="h6">حکم ردیف 13: {MablagHokmHogugRadif13}</Typography>}
-        {MablagHokmHogugRadif14 != 0 && <Typography variant="h6">حکم ردیف 14: {MablagHokmHogugRadif14}</Typography>}
-        {MablagHokmHogugRadif15 != 0 && <Typography variant="h6">حکم ردیف 15: {MablagHokmHogugRadif15}</Typography>}
-        {MablagHokmHogugRadif16 != 0 && <Typography variant="h6">حکم ردیف 16: {MablagHokmHogugRadif16}</Typography>}
-        {MablagHokmHogugRadif17 != 0 && <Typography variant="h6">حکم ردیف 17: {MablagHokmHogugRadif17}</Typography>}
-        {MablagHokmHogugRadif18 != 0 && <Typography variant="h6">حکم ردیف 18: {MablagHokmHogugRadif18}</Typography>}
-        {MablagHokmHogugRadif19 != 0 && <Typography variant="h6">حکم ردیف 19: {MablagHokmHogugRadif19}</Typography>}
-        {MablagHokmHogugRadif20 != 0 && <Typography variant="h6">حکم ردیف 20: {MablagHokmHogugRadif20}</Typography>}
-        {MablagMazayaHogugRadif1 != 0 && <Typography variant="h6">مزایای موردی ردیف 1: {MablagMazayaHogugRadif1}</Typography>}
-        {MablagMazayaHogugRadif2 != 0 && <Typography variant="h6">پاداش: {MablagMazayaHogugRadif2}</Typography>}
-        {MablagMazayaHogugRadif3 != 0 && <Typography variant="h6">مزایای موردی ردیف 3: {MablagMazayaHogugRadif3}</Typography>}
-        {MablagMazayaHogugRadif4 != 0 && <Typography variant="h6">مزایای موردی ردیف 4: {MablagMazayaHogugRadif4}</Typography>}
-        {MablagMazayaHogugRadif5 != 0 && <Typography variant="h6">مزایای موردی ردیف 5: {MablagMazayaHogugRadif5}</Typography>}
-        {MablagMazayaHogugRadif6 != 0 && <Typography variant="h6">مزایای موردی ردیف 6: {MablagMazayaHogugRadif6}</Typography>}
-        {MablagMazayaHogugRadif7 != 0 && <Typography variant="h6">مزایای موردی ردیف 7: {MablagMazayaHogugRadif7}</Typography>}
-        {MablagMazayaHogugRadif8 != 0 && <Typography variant="h6">مزایای موردی ردیف 8: {MablagMazayaHogugRadif8}</Typography>}
-        {MablagMazayaHogugRadif9 != 0 && <Typography variant="h6">مزایای موردی ردیف 9: {MablagMazayaHogugRadif9}</Typography>}
-        {MablagMazayaHogugRadif10 != 0 && <Typography variant="h6">مزایای موردی ردیف 10: {MablagMazayaHogugRadif10}</Typography>}
-        {MablagMazayaHogugRadif11 != 0 && <Typography variant="h6">مزایای موردی ردیف 11: {MablagMazayaHogugRadif11}</Typography>}
-        {MablagMazayaHogugRadif12 != 0 && <Typography variant="h6">مزایای موردی ردیف 12: {MablagMazayaHogugRadif12}</Typography>}
-        {MablagMazayaHogugRadif13 != 0 && <Typography variant="h6">مزایای موردی ردیف 13: {MablagMazayaHogugRadif13}</Typography>}
-        {MablagMazayaHogugRadif14 != 0 && <Typography variant="h6">مزایای موردی ردیف 14: {MablagMazayaHogugRadif14}</Typography>}
-        {MablagMazayaHogugRadif15 != 0 && <Typography variant="h6">مزایای موردی ردیف 15: {MablagMazayaHogugRadif15}</Typography>}
-        {MablagMazayaHogugRadif16 != 0 && <Typography variant="h6">مزایای موردی ردیف 16: {MablagMazayaHogugRadif16}</Typography>}
-        {MablagMazayaHogugRadif17 != 0 && <Typography variant="h6">مزایای موردی ردیف 17: {MablagMazayaHogugRadif17}</Typography>}
-        {MablagMazayaHogugRadif18 != 0 && <Typography variant="h6">مزایای موردی ردیف 18: {MablagMazayaHogugRadif18}</Typography>}
-        {MablagMazayaHogugRadif19 != 0 && <Typography variant="h6">مزایای موردی ردیف 19: {MablagMazayaHogugRadif19}</Typography>}
-        {MablagMazayaHogugRadif20 != 0 && <Typography variant="h6">مزایای موردی ردیف 20: {MablagMazayaHogugRadif20}</Typography>}
-        {MablagEzafeKariSaati1 != 0 && <Typography variant="h6">اضافه کاری: {MablagEzafeKariSaati1}</Typography>}
-        {MablagEzafeKariSaati2 != 0 && <Typography variant="h6">2 اضافه کاری: {MablagEzafeKariSaati2}</Typography>}
-        {MablagEzafeKariSaati3 != 0 && <Typography variant="h6">3 اضافه کاری: {MablagEzafeKariSaati3}</Typography>}
-        {MablagEzafeKariSaati4 != 0 && <Typography variant="h6">4 اضافه کاری: {MablagEzafeKariSaati4}</Typography>}
-        {MablagEzafeKariSaati5 != 0 && <Typography variant="h6">5 اضافه کاری: {MablagEzafeKariSaati5}</Typography>}
-        {MablagGomeKariSaati != 0 && <Typography variant="h6">جمعه کاری : {MablagGomeKariSaati}</Typography>}
-        {MablagTatilKariSaati != 0 && <Typography variant="h6">تعطیل کاری : {MablagTatilKariSaati}</Typography>}
-        {MablagShabKariSaati != 0 && <Typography variant="h6">شب کاری : {MablagShabKariSaati}</Typography>}
-        {MablagMamoriatRuzane1 != 0 && <Typography variant="h6">ماموریت 1: {MablagMamoriatRuzane1}</Typography>}
-        {MablagMamoriatRuzane2 != 0 && <Typography variant="h6">ماموریت 2: {MablagMamoriatRuzane2}</Typography>}
-        {MablagMamoriatRuzane3 != 0 && <Typography variant="h6">ماموریت 3: {MablagMamoriatRuzane3}</Typography>}
-        {MablagMamoriatRuzane4 != 0 && <Typography variant="h6">ماموریت 4: {MablagMamoriatRuzane4}</Typography>}
-        {MablagMamoriatRuzane5 != 0 && <Typography variant="h6">ماموریت 5: {MablagMamoriatRuzane5}</Typography>}
-        {MablagNobatKariRuzane1 != 0 && <Typography variant="h6">نوبت کاری 1: {MablagNobatKariRuzane1}</Typography>}
-        {MablagNobatKariRuzane2 != 0 && <Typography variant="h6">نوبت کاری 2: {MablagNobatKariRuzane2}</Typography>}
-        {MablagNobatKariRuzane3 != 0 && <Typography variant="h6">نوبت کاری 3: {MablagNobatKariRuzane3}</Typography>}
-        {MablagBazkharidBon != 0 && <Typography variant="h6">باز خرید بن: {MablagBazkharidBon}</Typography>}
-        {MablagBazkharidEidi != 0 && <Typography variant="h6">باز خرید عیدی: {MablagBazkharidEidi}</Typography>}
-        {MablagBazkharidMorkhasi != 0 && <Typography variant="h6">باز خرید مرخصی: {MablagBazkharidMorkhasi}</Typography>}
-        {MablagBazkharidSanavat != 0 && <Typography variant="h6">باز خرید سنوات: {MablagBazkharidSanavat}</Typography>}
-        {RoundMahGhabl != 0 && <Typography variant="h6">روند ماه قبل: {RoundMahGhabl}</Typography>}
+        <Typography variant="subtitle1" style={{borderBottom:'2px solid'}}>مزایای حقوق</Typography>
+      </Grid>
+      <Grid item xs={12} style={{display:'flex' , flexDirection:'column' , padding:'0.5px' , gap:1}}>
+        {MablagHokmHogugRadif1 != 0 && <Typography variant="caption">حقوق پایه : {sp(MablagHokmHogugRadif1)}</Typography>}
+        {MablagHokmHogugRadif2 != 0 && <Typography variant="caption">فوق العاده شغل: {sp(MablagHokmHogugRadif2)}</Typography>}
+        {MablagHokmHogugRadif3 != 0 && <Typography variant="caption">بن: {sp(MablagHokmHogugRadif3)}</Typography>}
+        {MablagHokmHogugRadif4 != 0 && <Typography variant="caption">خوارو بار و مسکن: {sp(MablagHokmHogugRadif4)}</Typography>}
+        {MablagHokmHogugRadif5 != 0 && <Typography variant="caption">حکم ردیف 5: {sp(MablagHokmHogugRadif5)}</Typography>}
+        {MablagHokmHogugRadif6 != 0 && <Typography variant="caption">حق اولاد: {sp(MablagHokmHogugRadif6)}</Typography>}
+        {MablagHokmHogugRadif7 != 0 && <Typography variant="caption">بازخرید مرخصی: {sp(MablagHokmHogugRadif7)}</Typography>}
+        {MablagHokmHogugRadif8 != 0 && <Typography variant="caption">حق تاهل: {sp(MablagHokmHogugRadif8)}</Typography>}
+        {MablagHokmHogugRadif9 != 0 && <Typography variant="caption">پایه سنوات: {sp(MablagHokmHogugRadif9)}</Typography>}
+        {MablagHokmHogugRadif10 != 0 && <Typography variant="caption">حکم ردیف 10: {sp(MablagHokmHogugRadif10)}</Typography>}
+        {MablagHokmHogugRadif11 != 0 && <Typography variant="caption">حکم ردیف 11: {sp(MablagHokmHogugRadif11)}</Typography>}
+        {MablagHokmHogugRadif12 != 0 && <Typography variant="caption">حکم ردیف 12: {sp(MablagHokmHogugRadif12)}</Typography>}
+        {MablagHokmHogugRadif13 != 0 && <Typography variant="caption">حکم ردیف 13: {sp(MablagHokmHogugRadif13)}</Typography>}
+        {MablagHokmHogugRadif14 != 0 && <Typography variant="caption">حکم ردیف 14: {sp(MablagHokmHogugRadif14)}</Typography>}
+        {MablagHokmHogugRadif15 != 0 && <Typography variant="caption">حکم ردیف 15: {sp(MablagHokmHogugRadif15)}</Typography>}
+        {MablagHokmHogugRadif16 != 0 && <Typography variant="caption">حکم ردیف 16: {sp(MablagHokmHogugRadif16)}</Typography>}
+        {MablagHokmHogugRadif17 != 0 && <Typography variant="caption">حکم ردیف 17: {sp(MablagHokmHogugRadif17)}</Typography>}
+        {MablagHokmHogugRadif18 != 0 && <Typography variant="caption">حکم ردیف 18: {sp(MablagHokmHogugRadif18)}</Typography>}
+        {MablagHokmHogugRadif19 != 0 && <Typography variant="caption">حکم ردیف 19: {sp(MablagHokmHogugRadif19)}</Typography>}
+        {MablagHokmHogugRadif20 != 0 && <Typography variant="caption">حکم ردیف 20: {sp(MablagHokmHogugRadif20)}</Typography>}
+        {MablagMazayaHogugRadif1 != 0 && <Typography variant="caption">مزایای موردی ردیف 1: {sp(MablagMazayaHogugRadif1)}</Typography>}
+        {MablagMazayaHogugRadif2 != 0 && <Typography variant="caption">پاداش: {sp(MablagMazayaHogugRadif2)}</Typography>}
+        {MablagMazayaHogugRadif3 != 0 && <Typography variant="caption">مزایای موردی ردیف 3: {sp(MablagMazayaHogugRadif3)}</Typography>}
+        {MablagMazayaHogugRadif4 != 0 && <Typography variant="caption">مزایای موردی ردیف 4: {sp(MablagMazayaHogugRadif4)}</Typography>}
+        {MablagMazayaHogugRadif5 != 0 && <Typography variant="caption">مزایای موردی ردیف 5: {sp(MablagMazayaHogugRadif5)}</Typography>}
+        {MablagMazayaHogugRadif6 != 0 && <Typography variant="caption">مزایای موردی ردیف 6: {sp(MablagMazayaHogugRadif6)}</Typography>}
+        {MablagMazayaHogugRadif7 != 0 && <Typography variant="caption">مزایای موردی ردیف 7: {sp(MablagMazayaHogugRadif7)}</Typography>}
+        {MablagMazayaHogugRadif8 != 0 && <Typography variant="caption">مزایای موردی ردیف 8: {sp(MablagMazayaHogugRadif8)}</Typography>}
+        {MablagMazayaHogugRadif9 != 0 && <Typography variant="caption">مزایای موردی ردیف 9: {sp(MablagMazayaHogugRadif9)}</Typography>}
+        {MablagMazayaHogugRadif10 != 0 && <Typography variant="caption">مزایای موردی ردیف 10: {sp(MablagMazayaHogugRadif10)}</Typography>}
+        {MablagMazayaHogugRadif11 != 0 && <Typography variant="caption">مزایای موردی ردیف 11: {sp(MablagMazayaHogugRadif11)}</Typography>}
+        {MablagMazayaHogugRadif12 != 0 && <Typography variant="caption">مزایای موردی ردیف 12: {sp(MablagMazayaHogugRadif12)}</Typography>}
+        {MablagMazayaHogugRadif13 != 0 && <Typography variant="caption">مزایای موردی ردیف 13: {sp(MablagMazayaHogugRadif13)}</Typography>}
+        {MablagMazayaHogugRadif14 != 0 && <Typography variant="caption">مزایای موردی ردیف 14: {sp(MablagMazayaHogugRadif14)}</Typography>}
+        {MablagMazayaHogugRadif15 != 0 && <Typography variant="caption">مزایای موردی ردیف 15: {sp(MablagMazayaHogugRadif15)}</Typography>}
+        {MablagMazayaHogugRadif16 != 0 && <Typography variant="caption">مزایای موردی ردیف 16: {sp(MablagMazayaHogugRadif16)}</Typography>}
+        {MablagMazayaHogugRadif17 != 0 && <Typography variant="caption">مزایای موردی ردیف 17: {sp(MablagMazayaHogugRadif17)}</Typography>}
+        {MablagMazayaHogugRadif18 != 0 && <Typography variant="caption">مزایای موردی ردیف 18: {sp(MablagMazayaHogugRadif18)}</Typography>}
+        {MablagMazayaHogugRadif19 != 0 && <Typography variant="caption">مزایای موردی ردیف 19: {sp(MablagMazayaHogugRadif19)}</Typography>}
+        {MablagMazayaHogugRadif20 != 0 && <Typography variant="caption">مزایای موردی ردیف 20: {sp(MablagMazayaHogugRadif20)}</Typography>}
+        {MablagEzafeKariSaati1 != 0 && <Typography variant="caption">اضافه کاری: {sp(MablagEzafeKariSaati1)}</Typography>}
+        {MablagEzafeKariSaati2 != 0 && <Typography variant="caption">2 اضافه کاری: {sp(MablagEzafeKariSaati2)}</Typography>}
+        {MablagEzafeKariSaati3 != 0 && <Typography variant="caption">3 اضافه کاری: {sp(MablagEzafeKariSaati3)}</Typography>}
+        {MablagEzafeKariSaati4 != 0 && <Typography variant="caption">4 اضافه کاری: {sp(MablagEzafeKariSaati4)}</Typography>}
+        {MablagEzafeKariSaati5 != 0 && <Typography variant="caption">5 اضافه کاری: {sp(MablagEzafeKariSaati5)}</Typography>}
+        {MablagGomeKariSaati != 0 && <Typography variant="caption">جمعه کاری : {sp(MablagGomeKariSaati)}</Typography>}
+        {MablagTatilKariSaati != 0 && <Typography variant="caption">تعطیل کاری : {sp(MablagTatilKariSaati)}</Typography>}
+        {MablagShabKariSaati != 0 && <Typography variant="caption">شب کاری : {sp(MablagShabKariSaati)}</Typography>}
+        {MablagMamoriatRuzane1 != 0 && <Typography variant="caption">ماموریت 1: {sp(MablagMamoriatRuzane1)}</Typography>}
+        {MablagMamoriatRuzane2 != 0 && <Typography variant="caption">ماموریت 2: {sp(MablagMamoriatRuzane2)}</Typography>}
+        {MablagMamoriatRuzane3 != 0 && <Typography variant="caption">ماموریت 3: {sp(MablagMamoriatRuzane3)}</Typography>}
+        {MablagMamoriatRuzane4 != 0 && <Typography variant="caption">ماموریت 4: {sp(MablagMamoriatRuzane4)}</Typography>}
+        {MablagMamoriatRuzane5 != 0 && <Typography variant="caption">ماموریت 5: {sp(MablagMamoriatRuzane5)}</Typography>}
+        {MablagNobatKariRuzane1 != 0 && <Typography variant="caption">نوبت کاری 1: {sp(MablagNobatKariRuzane1)}</Typography>}
+        {MablagNobatKariRuzane2 != 0 && <Typography variant="caption">نوبت کاری 2: {sp(MablagNobatKariRuzane2)}</Typography>}
+        {MablagNobatKariRuzane3 != 0 && <Typography variant="caption">نوبت کاری 3: {sp(MablagNobatKariRuzane3)}</Typography>}
+        {MablagBazkharidBon != 0 && <Typography variant="caption">باز خرید بن: {sp(MablagBazkharidBon)}</Typography>}
+        {MablagBazkharidEidi != 0 && <Typography variant="caption">باز خرید عیدی: {sp(MablagBazkharidEidi)}</Typography>}
+        {MablagBazkharidMorkhasi != 0 && <Typography variant="caption">باز خرید مرخصی: {sp(MablagBazkharidMorkhasi)}</Typography>}
+        {MablagBazkharidSanavat != 0 && <Typography variant="caption">باز خرید سنوات: {sp(MablagBazkharidSanavat)}</Typography>}
+        {RoundMahGhabl != 0 && <Typography variant="caption">روند ماه قبل: {sp(RoundMahGhabl)}</Typography>}
       </Grid>
     </Grid>
   );
