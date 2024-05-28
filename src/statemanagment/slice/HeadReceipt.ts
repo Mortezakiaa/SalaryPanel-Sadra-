@@ -2,15 +2,21 @@ import { createSlice } from "@reduxjs/toolkit";
 import { IRootState } from "../store/store";
 import { THeadReceipt } from "@/Types/Types";
 
-const initialState: THeadReceipt = {
-  Code: "",
-  CodeMeli: "",
-  FamilyPersonel: "",
-  NamePersonel: "",
-  Semat: "",
-  ShomareBime: "",
-  ShomareHesab1: "",
-  ShomareShenasname: "",
+type T = {
+  data: THeadReceipt;
+};
+
+const initialState: T = {
+  data: {
+    Code: "",
+    NamePersonel: "",
+    FamilyPersonel: "",
+    CodeMeli: "",
+    ShomareShenasname: "",
+    ShomareHesab1: "",
+    ShomareBime: "",
+    Semat: "",
+  },
 };
 
 const HeadSlice = createSlice({
@@ -18,7 +24,7 @@ const HeadSlice = createSlice({
   initialState,
   reducers: {
     setHead: (state, action) => {
-      state = action.payload;
+      state.data = action.payload;
     },
   },
 });

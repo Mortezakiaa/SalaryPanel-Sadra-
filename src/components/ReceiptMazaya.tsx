@@ -5,7 +5,9 @@ import { Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 
 export default function ReceiptMazaya() {
-  const {
+  const data = useSelector(MazayaSelector);
+
+  const{
     MablagBazkharidBon,
     MablagBazkharidEidi,
     MablagBazkharidMorkhasi,
@@ -67,7 +69,8 @@ export default function ReceiptMazaya() {
     MablagShabKariSaati,
     MablagTatilKariSaati,
     RoundMahGhabl,
-  } = useSelector(MazayaSelector);
+  } = data.data
+
   return (
     <Grid container>
       <Grid item xs={12}>

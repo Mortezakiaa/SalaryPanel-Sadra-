@@ -5,6 +5,7 @@ import { Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 
 export default function ReceiptHead() {
+  const data = useSelector(HeadSelector);
   const {
     Code,
     CodeMeli,
@@ -14,7 +15,7 @@ export default function ReceiptHead() {
     ShomareBime,
     ShomareHesab1,
     ShomareShenasname,
-  } = useSelector(HeadSelector);
+  } = data.data
 
   return (
     <Grid container>

@@ -5,6 +5,7 @@ import { Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 
 export default function ReceiptAmary() {
+  const data = useSelector(AmarySelector);
   const {
     BimeSahmeBikari,
     HogugRuzaneFish,
@@ -21,7 +22,7 @@ export default function ReceiptAmary() {
     DaramadMashmolMaliatNoe4Fish,
     DaramadMashmolMaliatNoe5Fish,
     DaramadMashmolMaliatNoe6Fish,
-  } = useSelector(AmarySelector);
+  } = data.data
   return (
     <Grid container>
       <Grid item xs={12}>

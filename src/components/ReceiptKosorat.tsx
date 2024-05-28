@@ -5,6 +5,8 @@ import { Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 
 export default function ReceiptKosorat() {
+  const data = useSelector(KosoratSelector);
+
   const {
     BimeSahmeKargar,
     MablagGibatRuzane,
@@ -53,7 +55,8 @@ export default function ReceiptKosorat() {
     MablagTakhirSaati,
     MaliatFish,
     RoundMahGari,
-  } = useSelector(KosoratSelector);
+  } = data.data
+
   return (
     <Grid container>
       <Grid xs={12}>

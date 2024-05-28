@@ -2,12 +2,18 @@ import { createSlice } from "@reduxjs/toolkit";
 import { IRootState } from "../store/store";
 import { TFooterReceipt } from "@/Types/Types";
 
-const initialState: TFooterReceipt = {
-  Code: "",
-  DateAsarStr: "",
-  JamGhabelPardakhtFish: 0,
-  JamEzafatFish: 0,
-  JamKosuratFish: 0,
+type T = {
+  data: TFooterReceipt;
+};
+
+const initialState: T = {
+  data: {
+    Code: "",
+    DateAsarStr: "",
+    JamGhabelPardakhtFish: 0,
+    JamEzafatFish: 0,
+    JamKosuratFish: 0,
+  },
 };
 
 const FooterSlice = createSlice({
@@ -15,7 +21,7 @@ const FooterSlice = createSlice({
   initialState,
   reducers: {
     setFooter: (state, action) => {
-      state = action.payload;
+      state.data = action.payload;
     },
   },
 });

@@ -210,7 +210,7 @@ export interface TSalarySlice {
   karkard: TKarkardReceipt[];
   mazaya: TMazayaReceipt[];
   kosorat: TKosoratReceipt[];
-  amary: TAmaryReceipt[];
+  amari: TAmaryReceipt[];
   footer: TFooterReceipt[];
   isSuccess: boolean;
 }

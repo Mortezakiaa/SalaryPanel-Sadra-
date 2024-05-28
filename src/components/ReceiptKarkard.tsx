@@ -5,6 +5,8 @@ import { Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 
 export default function ReceiptKarkard() {
+  const data = useSelector(KarkardSelector);
+
   const {
     NobatKariRuzane1,
     NobatKariRuzane2,
@@ -46,7 +48,7 @@ export default function ReceiptKarkard() {
     TagilSaati,
     TakhirSaati,
     TatilKariSaati,
-  } = useSelector(KarkardSelector);
+  } = data.data
   return (
     <Grid container>
       <Grid item xs={12}>

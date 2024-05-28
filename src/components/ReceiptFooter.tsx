@@ -5,8 +5,8 @@ import { Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 
 export default function ReceiptFooter() {
-  const { JamEzafatFish, JamGhabelPardakhtFish, JamKosuratFish } =
-    useSelector(FooterSelector);
+  const data = useSelector(FooterSelector);
+    const { JamEzafatFish, JamGhabelPardakhtFish, JamKosuratFish } = data.data
   return (
     <Grid container>
       <Grid item xs={3}>

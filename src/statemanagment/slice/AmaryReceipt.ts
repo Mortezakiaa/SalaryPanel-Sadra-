@@ -2,24 +2,30 @@ import { createSlice } from "@reduxjs/toolkit";
 import { IRootState } from "../store/store";
 import { TAmaryReceipt } from "@/Types/Types";
 
-const initialState: TAmaryReceipt = {
-  Code: "",
-  DateAsarStr: "",
-  HogugRuzaneFish: 0,
-  HogugSaatiFish: 0,
-  DaramadMashmolBimeFish: 0,
-  DaramadMashmolGheireMashmolBimeFish: 0,
-  BimeSahmeKarfarma: 0,
-  BimeSahmeBikari: 0,
-  DaramadMashmolMaliatFish: 0,
-  DaramadMashmolGheireMashmolMaliatFish: 0,
-  DaramadMashmolMaliatMade131Fish: 0,
-  DaramadMashmolMaliatNoe1Fish: 0,
-  DaramadMashmolMaliatNoe2Fish: 0,
-  DaramadMashmolMaliatNoe3Fish: 0,
-  DaramadMashmolMaliatNoe4Fish: 0,
-  DaramadMashmolMaliatNoe5Fish: 0,
-  DaramadMashmolMaliatNoe6Fish: 0,
+type T = {
+  data: TAmaryReceipt;
+};
+
+const initialState: T = {
+  data: {
+    Code: "",
+    HogugSaatiFish: 0,
+    HogugRuzaneFish: 0,
+    DateAsarStr: "",
+    DaramadMashmolBimeFish: 0,
+    DaramadMashmolGheireMashmolBimeFish: 0,
+    BimeSahmeKarfarma: 0,
+    BimeSahmeBikari: 0,
+    DaramadMashmolMaliatFish: 0,
+    DaramadMashmolGheireMashmolMaliatFish: 0,
+    DaramadMashmolMaliatMade131Fish: 0,
+    DaramadMashmolMaliatNoe1Fish: 0,
+    DaramadMashmolMaliatNoe2Fish: 0,
+    DaramadMashmolMaliatNoe3Fish: 0,
+    DaramadMashmolMaliatNoe4Fish: 0,
+    DaramadMashmolMaliatNoe5Fish: 0,
+    DaramadMashmolMaliatNoe6Fish: 0,
+  },
 };
 
 const AmarySlice = createSlice({
@@ -27,7 +33,7 @@ const AmarySlice = createSlice({
   initialState,
   reducers: {
     setAmary: (state, action) => {
-      state = action.payload;
+      state.data = action.payload;
     },
   },
 });

@@ -7,7 +7,6 @@ import { setHead } from "@/statemanagment/slice/HeadReceipt";
 import { setKarkard } from "@/statemanagment/slice/KarkardReceipt";
 import { setKosorat } from "@/statemanagment/slice/KosoratReceipt";
 import { setMazaya } from "@/statemanagment/slice/MazayaReceipt";
-import { setReceiptModal } from "@/statemanagment/slice/ReceiptModal";
 import ApiService from "@/utils/axios";
 import { p2e } from "@/utils/replaceNumber";
 import { Button, Grid, Stack, Typography } from "@mui/material";
@@ -55,14 +54,14 @@ export default function PersonInfo() {
     }
     setPersonInfo({ ...personInfo, date: `${date.year}/${date.month}` });
     const data: TSalarySlice = await ApiService.post("/Pay/Search", personInfo);
+
     if (data.isSuccess) {
-      dispatch(setHead(data.head));
-      dispatch(setKarkard(data.karkard));
-      dispatch(setAmary(data.amary));
-      dispatch(setKosorat(data.kosorat));
-      dispatch(setMazaya(data.mazaya));
-      dispatch(setFooter(data.footer));
-      dispatch(setReceiptModal(true));
+      dispatch(setHead(data.head[0]));
+      dispatch(setKarkard(data.karkard[0]));
+      dispatch(setAmary(data.amari[0]));
+      dispatch(setKosorat(data.kosorat[0]));
+      dispatch(setMazaya(data.mazaya[0]));
+      dispatch(setFooter(data.footer[0]));
     }
   };
 
