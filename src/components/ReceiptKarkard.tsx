@@ -1,7 +1,7 @@
 "use client";
 
 import { KarkardSelector } from "@/statemanagment/slice/KarkardReceipt";
-import { Grid, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 import { useSelector } from "react-redux";
 
 export default function ReceiptKarkard() {
@@ -52,200 +52,200 @@ export default function ReceiptKarkard() {
   return (
     <Grid container style={{ textAlign: "center" }}>
       <Grid item xs={12} style={{ borderBottom: "2px solid" }}>
-        <Typography variant="subtitle1">اطلاعات کارکرد</Typography>
+        <span>اطلاعات کارکرد</span>
       </Grid>
       <Grid item xs={12} style={{display:'flex' , flexDirection:'column' , padding:'0.5px' , gap:1}}>
         {KarkardMahRuzane != 0 && (
-          <Typography variant="caption">
+          <span>
             کارکرد روزانه : {KarkardMahRuzane}
-          </Typography>
+          </span>
         )}
         {KarkardMahSaati != 0 && (
-          <Typography variant="caption">
+          <span>
             کارکرد ساعتی : {KarkardMahSaati}
-          </Typography>
+          </span>
         )}
         {EzafeKariSaati1 != 0 && (
-          <Typography variant="caption">
+          <span>
             اضافه کاری: {EzafeKariSaati1}
-          </Typography>
+          </span>
         )}
         {EzafeKariSaati2 != 0 && (
-          <Typography variant="caption">
+          <span>
             اضافه کاری 2: {EzafeKariSaati2}
-          </Typography>
+          </span>
         )}
         {EzafeKariSaati3 != 0 && (
-          <Typography variant="caption">
+          <span>
             اضافه کاری 3: {EzafeKariSaati3}
-          </Typography>
+          </span>
         )}
         {EzafeKariSaati4 != 0 && (
-          <Typography variant="caption">
+          <span>
             اضافه کاری 4: {EzafeKariSaati4}
-          </Typography>
+          </span>
         )}
         {EzafeKariSaati5 != 0 && (
-          <Typography variant="caption">
+          <span>
             اضافه کاری 4: {EzafeKariSaati5}
-          </Typography>
+          </span>
         )}
         {GomeKariSaati != 0 && (
-          <Typography variant="caption">
+          <span>
             جمعه کاری: {GomeKariSaati}
-          </Typography>
+          </span>
         )}
         {TatilKariSaati != 0 && (
-          <Typography variant="caption">
+          <span>
             تعطیل کاری: {TatilKariSaati}
-          </Typography>
+          </span>
         )}
         {ShabKariSaati != 0 && (
-          <Typography variant="caption">شب کاری: {ShabKariSaati}</Typography>
+          <span>شب کاری: {ShabKariSaati}</span>
         )}
         {TakhirSaati != 0 && (
-          <Typography variant="caption">
+          <span>
             تاخیر ساعتی: {TakhirSaati}
-          </Typography>
+          </span>
         )}
         {TagilSaati != 0 && (
-          <Typography variant="caption">تعجیل ساعتی: {TagilSaati}</Typography>
+          <span>تعجیل ساعتی: {TagilSaati}</span>
         )}
         {MamoriatRuzane1 != 0 && (
-          <Typography variant="caption">
+          <span>
             ماموریت 1: {MamoriatRuzane1}
-          </Typography>
+          </span>
         )}
         {MamoriatRuzane2 != 0 && (
-          <Typography variant="caption">
+          <span>
             ماموریت 2: {MamoriatRuzane2}
-          </Typography>
+          </span>
         )}
         {MamoriatRuzane3 != 0 && (
-          <Typography variant="caption">
+          <span>
             ماموریت 3: {MamoriatRuzane3}
-          </Typography>
+          </span>
         )}
         {MamoriatRuzane4 != 0 && (
-          <Typography variant="caption">
+          <span>
             ماموریت 4: {MamoriatRuzane4}
-          </Typography>
+          </span>
         )}
         {MamoriatRuzane5 != 0 && (
-          <Typography variant="caption">
+          <span>
             ماموریت 5: {MamoriatRuzane5}
-          </Typography>
+          </span>
         )}
         {NobatKariRuzane1 != 0 && (
-          <Typography variant="caption">
+          <span>
             نوبت کاری 1: {NobatKariRuzane1}
-          </Typography>
+          </span>
         )}
         {NobatKariRuzane2 != 0 && (
-          <Typography variant="caption">
+          <span>
             نوبت کاری 2: {NobatKariRuzane2}
-          </Typography>
+          </span>
         )}
         {NobatKariRuzane3 != 0 && (
-          <Typography variant="caption">
+          <span>
             نوبت کاری 3: {NobatKariRuzane3}
-          </Typography>
+          </span>
         )}
         {GibatRuzane != 0 && (
-          <Typography variant="caption">غیبت: {GibatRuzane}</Typography>
+          <span>غیبت: {GibatRuzane}</span>
         )}
         {KasrKarRuzane != 0 && (
-          <Typography variant="caption">کسر کار: {KasrKarRuzane}</Typography>
+          <span>کسر کار: {KasrKarRuzane}</span>
         )}
         {MorkhasiEstehghaghiRuzane != 0 && (
-          <Typography variant="caption">
+          <span>
             مرخصی روزانه: {MorkhasiEstehghaghiRuzane}
-          </Typography>
+          </span>
         )}
         {MorkhasiEstehghaghiSaati != 0 && (
-          <Typography variant="caption">
+          <span>
             مرخصی ساعتی: {MorkhasiEstehghaghiSaati}
-          </Typography>
+          </span>
         )}
         {MorkhasiEstehlagiRuzane != 0 && (
-          <Typography variant="caption">
+          <span>
             مرخصی استعلاجی: {MorkhasiEstehlagiRuzane}
-          </Typography>
+          </span>
         )}
         {MorkhasiTashvighiRuzane != 0 && (
-          <Typography variant="caption">
+          <span>
             مرخصی تشویقی: {MorkhasiTashvighiRuzane}
-          </Typography>
+          </span>
         )}
         {MorkhasiBedonHogugRuzane != 0 && (
-          <Typography variant="caption">
+          <span>
             مرخصی بدون حقوق: {MorkhasiBedonHogugRuzane}
-          </Typography>
+          </span>
         )}
         {MorkhasiSayerRuzane != 0 && (
-          <Typography variant="caption">
+          <span>
             مرخصی سایر: {MorkhasiSayerRuzane}
-          </Typography>
+          </span>
         )}
         {ParametrSaati1 != 0 && (
-          <Typography variant="caption">
+          <span>
             پارامتر ساعتی 1: {ParametrSaati1}
-          </Typography>
+          </span>
         )}
         {ParametrSaati2 != 0 && (
-          <Typography variant="caption">
+          <span>
             پارامتر ساعتی 2: {ParametrSaati2}
-          </Typography>
+          </span>
         )}
         {ParametrSaati3 != 0 && (
-          <Typography variant="caption">
+          <span>
             پارامتر ساعتی 3: {ParametrSaati3}
-          </Typography>
+          </span>
         )}
         {ParametrSaati4 != 0 && (
-          <Typography variant="caption">
+          <span>
             پارامتر ساعتی 4: {ParametrSaati4}
-          </Typography>
+          </span>
         )}
         {ParametrSaati5 != 0 && (
-          <Typography variant="caption">
+          <span>
             پارامتر ساعتی 5: {ParametrSaati5}
-          </Typography>
+          </span>
         )}
         {ParametrRuzane1 != 0 && (
-          <Typography variant="caption">
+          <span>
             پارامتر روزانه 1: {ParametrRuzane1}
-          </Typography>
+          </span>
         )}
         {ParametrRuzane2 != 0 && (
-          <Typography variant="caption">
+          <span>
             پارامتر روزانه 2: {ParametrRuzane2}
-          </Typography>
+          </span>
         )}
         {ParametrRuzane3 != 0 && (
-          <Typography variant="caption">
+          <span>
             پارامتر روزانه 3: {ParametrRuzane3}
-          </Typography>
+          </span>
         )}
         {ParametrRuzane4 != 0 && (
-          <Typography variant="caption">
+          <span>
             پارامتر روزانه 4: {ParametrRuzane4}
-          </Typography>
+          </span>
         )}
         {ParametrRuzane5 != 0 && (
-          <Typography variant="caption">
+          <span>
             پارامتر روزانه 5: {ParametrRuzane5}
-          </Typography>
+          </span>
         )}
         {MorkhasiMandehInMahRuzane != 0 && (
-          <Typography variant="caption">
+          <span>
             مانده مرخصی روزانه: {MorkhasiMandehInMahRuzane}
-          </Typography>
+          </span>
         )}
         {MorkhasiMandehInMahSaati != 0 && (
-          <Typography variant="caption">
+          <span>
             مانده مرخصی ساعتی: {MorkhasiMandehInMahSaati}
-          </Typography>
+          </span>
         )}
       </Grid>
     </Grid>
